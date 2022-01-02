@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GoogleDrive</title>
+        <style>
+            .navbar{
+                border-bottom: grey;
+                height: 60px;
+                width: 100%;
+                display: flex;
+
+            }
+
+            #nav_img{
+                height: 45px;
+                width: 45px;
+                margin-left: 30px;
+                margin-top: 10px;
+            }
+            .box{
+                margin-top: 7px;
+                margin-left: 150px;
+                border: 1px solid rgb(230, 230, 230);
+                background-color: rgb(243, 243, 243);
+                border-radius: 5px;
+                height: 45px;
+                width: 700px;
+            }
+
+            .box::placeholder{
+                font-size: 15px;
+                padding-left: 20px;
+            }
+            * {
+            box-sizing: border-box;
+            }
+            #lgDemo {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-gap: 5px;
+            }
+            #lgDemo .item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            }
+            #lgDemo .item:nth-child(odd) { 
+                background: #f7f7f7; 
+            }
+            #lgDemo.grid { 
+                grid-template-columns: 33% 33% 33%; 
+            }
+            #lgDemo.grid .item:nth-child(odd) {
+                 background: none; 
+            }
+            html, body { 
+                font-family: arial, sans-serif; 
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+
+            <img src="https://th.bing.com/th/id/R.e15d3c9913ccf5983916f6d07f285380?rik=Fm1yhldkKYkw8Q&riu=http%3a%2f%2fwww.gamebra.com%2fimages%2frhsxvfm44cp.png&ehk=gl1R9w6LswAWXctw1ukK0sVWOtGQ%2bCvZnXHtnvChS18%3d&risl=&pid=ImgRaw&r=0" id="nav_img" alt="">
+            <h1>Drive</h1>
+            <input type="text" class="box" placeholder=" Search in drive">
+        </nav>
+        <hr/>
+        <button id="sList">&#8863;</button>
+        <button id="sGrid">&#8862;</button>
+        <br><br>
+        <div id="lgDemo">
+          <div class="item">Item A</div>
+          <div class="item">Item B</div>
+          <div class="item">Item C</div>
+          <div class="item">Item D</div>
+          <div class="item">Item E</div>
+        </div>
+          
+        <script>
+            window.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("sList").addEventListener("click", function(){
+                document.getElementById("lgDemo").classList.remove("grid");
+            });
+            document.getElementById("sGrid").addEventListener("click", function(){
+                document.getElementById("lgDemo").classList.add("grid");
+            });
+            });
+        </script>
+    </body>
+</html>
